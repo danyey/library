@@ -19,7 +19,7 @@ public class Library implements Iterable<Book>
     return null;
   }
   
-  public List<Book findBooksByTitle(String approxTitle)
+  public List<Book> findBooksByTitle(String approxTitle)
   {
     return findBooksWhere(Book.TITLE, approxTitle);
   }
@@ -29,7 +29,7 @@ public class Library implements Iterable<Book>
   {
     List<Book> res = new ArrayList<Book>();
     for (Book book : books)
-      if (book.hasField(fieldName) && similar(fieldName, book.getField(fieldName), approxValue))
+      if (book.hasFieldValue(fieldName) && similar(fieldName, book.getFieldValue(fieldName), approxValue))
         res.add(book);
     return res;
   }
@@ -39,8 +39,13 @@ public class Library implements Iterable<Book>
     return books.iterator();
   }
   
-  public static similar(String fieldName, String value, String approxValue)
+  public static boolean similar(String fieldName, String value, String approxValue)
   {
     return value.contains(approxValue); //for a start
+  }
+  
+  public static void main(String args[])
+  {
+    //import
   }
 }

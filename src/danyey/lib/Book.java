@@ -30,11 +30,11 @@ public class Book extends Thing
   
   public void setAuthor(String author)
   {
-    setField(AUTHOR, author)
+    setField(AUTHOR, author);
   }
   
   public String getAuthor()
   {
-    return getField(AUTHOR);
+    return getFieldValue(AUTHOR);
   }
 }
